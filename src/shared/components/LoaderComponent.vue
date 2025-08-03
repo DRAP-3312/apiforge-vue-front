@@ -9,7 +9,11 @@ const props = defineProps<LoaderComponentProps>()
     <circle r="20" cy="50" cx="50"></circle>
   </svg>
 
-  <div class="loader" v-else-if="props.typeLoader === 'bar'"></div>
+  <div
+    class="loader"
+    v-else-if="props.typeLoader === 'bar'"
+    :style="{ '--loader-bg-color': props.bgLoader, '--loader-color': props.colorLoader }"
+  ></div>
 </template>
 
 <style scoped>
@@ -56,18 +60,17 @@ circle {
 .loader {
   display: block;
   --height-of-loader: 2px;
-  --loader-color: #ed8200;
   width: 100%;
   height: var(--height-of-loader);
   border-radius: 30px;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: var(--loader-bg-color, rgba(0, 0, 0, 0.2));
   position: relative;
 }
 
 .loader::before {
   content: '';
   position: absolute;
-  background: var(--loader-color);
+  background: var(--loader-color, #22c55e);
   top: 0;
   left: 0;
   width: 0%;

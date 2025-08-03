@@ -14,9 +14,9 @@ const emitBtn = (val: Theme) => emit('btn-emit', val)
 <template>
   <div class="w-full h-full">
     <button
-      class="cursor-pointer px-2 py-1 rounded-md"
+      class="cursor-pointer px-2 py-1 rounded-md dark:text-white text-gray-600"
       :class="{
-        'bg-blue-500': props.target === props.theme,
+        'bg-success-500 hover:bg-success-700 text-white': props.target === props.theme,
         'dark:bg-gray-700 bg-gray-200 dark:hover:bg-gray-600 hover:bg-gray-400':
           props.target !== props.theme,
       }"
@@ -27,11 +27,11 @@ const emitBtn = (val: Theme) => emit('btn-emit', val)
           :name="props.icon"
           :size="20"
           weight="duotone"
-          :color="target === 'dark' ? '#fff' : '#111827'"
+          :color="target === 'dark' || props.target === props.theme ? '#fff' : '#8A8A8A'"
           v-if="props.icon"
         />
 
-        <p>{{ props.content }}</p>
+        <p class="hidden md:flex">{{ props.content }}</p>
       </div>
     </button>
   </div>

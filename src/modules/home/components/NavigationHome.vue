@@ -20,7 +20,7 @@ const listBtnThemes: { id: number; content: string; icon: any; theme: Theme }[] 
 <template>
   <div class="w-full h-full flex items-center justify-between dark:text-white text-gray-600 p-3">
     <div>
-      <!-- <LogoImage alt="API Forge Logo" logo-type="bg-on" size="sm" /> -->
+      <h1 class="text-3xl">API Forge</h1>
     </div>
     <div class="flex justify-cente items-center gap-2">
       <ButtonTheme

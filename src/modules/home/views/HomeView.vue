@@ -17,7 +17,7 @@ const schemaRecived = (val: Object) => {
     <div class="lg:w-1/2 lg:flex justify-center items-center p-5 dark:text-white text-gray-600">
       <div class="flex flex-col gap-2">
         <div class="font-sans p-1 border-b dark:border-gray-700 border-gray-300">
-          <h2 class="font-bold dark:text-white text-gray-900 text-[2.2rem]">API Forge</h2>
+          <h2 class="font-bold dark:text-white text-gray-900 text-[2.2rem]">Sobre la App</h2>
           <p class="dark:text-gray-400 text-md mb-2">
             Api Forge es una aplicación que simplifica el desarrollo front-end al crear un backend
             dinámico y temporal al instante. La herramienta permite a los desarrolladores definir un
