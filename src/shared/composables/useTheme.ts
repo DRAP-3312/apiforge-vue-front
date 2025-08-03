@@ -1,6 +1,5 @@
 import { ref, computed, watch, onMounted } from 'vue'
-
-export type Theme = 'light' | 'dark' | 'system'
+import type { Theme } from '../types/ThemeOptions'
 
 const THEME_STORAGE_KEY = 'apiforge-theme'
 
@@ -82,8 +81,5 @@ export function useTheme() {
     setTheme,
     toggleTheme,
     initTheme,
-    logoType: computed(() =>
-      theme.value === 'dark' ? 'api_forge_logo.png' : 'api_forge_logo-nobg.png',
-    ),
   }
 }
