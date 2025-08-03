@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 import ButtonTheme from '@/shared/components/ButtonTheme.vue'
 import LogoImage from '@/shared/components/LogoImage.vue'
-import type { NavigationHomeProps } from '@/shared/interfaces/navigationHomeProps'
 import type { Theme } from '@/shared/types/ThemeOptions'
+import type { NavigationHomeProps } from '../interfaces/navigationHomeProps'
 
 const props = defineProps<NavigationHomeProps>()
 const emit = defineEmits<{
@@ -11,9 +11,9 @@ const emit = defineEmits<{
 
 const emitTheme = (val: Theme) => emit('theme', val)
 const listBtnThemes: { id: number; content: string; icon: any; theme: Theme }[] = [
-  { id: 1, content: 'dark', icon: null, theme: 'dark' },
-  { id: 2, content: 'light', icon: null, theme: 'light' },
-  { id: 3, content: 'system', icon: null, theme: 'system' },
+  { id: 1, content: 'dark', icon: 'Moon', theme: 'dark' },
+  { id: 2, content: 'light', icon: 'SunDim', theme: 'light' },
+  { id: 3, content: 'system', icon: 'Desktop', theme: 'system' },
 ]
 </script>
 

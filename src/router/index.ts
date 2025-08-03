@@ -1,14 +1,14 @@
+import { homeRoute } from '@/modules/home/router'
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeModule from '@/modules/home/HomeModule.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: HomeModule,
+      redirect: { path: '/home' },
     },
+    { ...homeRoute },
   ],
 })
 

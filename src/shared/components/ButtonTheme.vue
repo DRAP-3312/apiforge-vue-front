@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import type { ButtonThemeProps } from '../interfaces/buttonThemeProps'
 import type { Theme } from '../types/ThemeOptions'
+import IconComponent from './IconComponent.vue'
 
 const props = defineProps<ButtonThemeProps>()
 const emit = defineEmits<{
@@ -21,8 +22,15 @@ const emitBtn = (val: Theme) => emit('btn-emit', val)
       }"
       @click="emitBtn(props.theme)"
     >
-      <div class="flex gap-1">
-        <div v-if="props.icon">--</div>
+      <div class="flex gap-1 justify-center items-center">
+        <IconComponent
+          :name="props.icon"
+          :size="20"
+          weight="duotone"
+          :color="target === 'dark' ? '#fff' : '#111827'"
+          v-if="props.icon"
+        />
+
         <p>{{ props.content }}</p>
       </div>
     </button>
