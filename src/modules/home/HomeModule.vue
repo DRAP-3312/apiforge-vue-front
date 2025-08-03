@@ -8,7 +8,7 @@ const { setTheme, theme } = useTheme()
 <template>
   <div class="dark:bg-dark-theme w-full h-full bg-white flex md:flex-col flex-row p-2">
     <header class="border-b border-gray-700">
-      <NavigationHome @theme="setTheme" />
+      <NavigationHome @theme="setTheme" :target="theme" />
     </header>
     <main class="flex justify-center items-center w-full h-full">principal</main>
   </div>

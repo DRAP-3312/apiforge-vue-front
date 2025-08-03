@@ -4,4 +4,5 @@ export interface ButtonThemeProps {
   content: string
   icon?: any
   theme: Theme
+  target: Theme
 }

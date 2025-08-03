@@ -13,7 +13,12 @@ const emitBtn = (val: Theme) => emit('btn-emit', val)
 <template>
   <div class="w-full h-full">
     <button
-      class="cursor-pointer px-2 py-1 dark:bg-gray-700 rounded-md dark:hover:bg-gray-600"
+      class="cursor-pointer px-2 py-1 rounded-md"
+      :class="{
+        'bg-blue-500': props.target === props.theme,
+        'dark:bg-gray-700 bg-gray-200 dark:hover:bg-gray-600 hover:bg-gray-400':
+          props.target !== props.theme,
+      }"
       @click="emitBtn(props.theme)"
     >
       <div class="flex gap-1">
