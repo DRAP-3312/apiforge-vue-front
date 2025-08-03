@@ -4,47 +4,85 @@ import { computed } from 'vue'
 import IconComponent from './IconComponent.vue'
 
 const props = defineProps<ButtonComponentProps>()
+const emit = defineEmits<{
+  btnEmit: [void]
+}>()
 
 const buttonClasses = computed(() => {
-  let baseClasses =
-    'flex justify-center items-center gap-1 rounded-md px-4 py-2 text-white font-medium transition-colors duration-200 ease-in-out cursor-pointer'
+  let classes = [
+    'flex',
+    'justify-center',
+    'items-center',
+    'gap-1',
+    'rounded-md',
+    'px-4',
+    'py-2',
+    'text-white',
+    'font-medium',
+    'transition-colors',
+    'duration-200',
+    'ease-in-out',
+  ]
 
   if (props.disable) {
-    baseClasses += ' opacity-50 cursor-not-allowed'
+    classes.push('opacity-50', 'cursor-not-allowed')
   }
 
   switch (props.buttonType) {
     case 'base':
-      baseClasses += ' dark:bg-gray-800 bg-gray-700 hover:bg-gray-600 dark:hover:bg-gray-700'
+      classes.push('dark:bg-gray-800', 'bg-gray-700', 'hover:bg-gray-600', 'dark:hover:bg-gray-700')
       break
-    case 'info':
-      baseClasses += ' bg-blue-600 hover:bg-blue-700'
+    case 'success':
+      classes.push('bg-success-600', 'hover:bg-success-700')
       break
-  }
-
-  return baseClasses
-})
-
-const buttonContainerClasses = computed(() => {
-  switch (props.buttonType) {
-    case 'base':
-      return 'w-auto'
     default:
-      return 'w-full'
+      break
   }
+
+  switch (props.sizeButton) {
+    case 'auto':
+      classes.push('w-auto')
+      break
+    case 'full':
+      classes.push('w-full')
+      break
+    case 'middle':
+      classes.push('w-1/2')
+      break
+    case 'quarter':
+      classes.push('w-1/4')
+      break
+
+    case 'fit':
+      classes.push('w-fit')
+      break
+    default:
+      classes.push('w-auto')
+      break
+  }
+
+  classes.push(props.disable ? 'cursor-not-allowed' : 'cursor-pointer')
+
+  return classes
 })
 </script>
 
 <template>
-  <div :class="buttonContainerClasses">
-    <button :disabled="props.disable" :class="buttonClasses">
-      <IconComponent
-        v-if="props.icon"
-        :color="props.colorIcon ?? '#fff'"
-        :name="props.icon"
-        :weight="props.iconWeight"
-      />
-      <p>{{ props.content }}</p>
-    </button>
-  </div>
+  <button :disabled="props.disable" :class="buttonClasses" @click="() => emit('btnEmit')">
+    <IconComponent
+      v-if="props.icon && props.iconPosition === 'before'"
+      :color="props.colorIcon ?? '#fff'"
+      :name="props.icon"
+      :weight="props.iconWeight"
+      :size="props.iconSize ?? 20"
+    />
+    <p>{{ props.content }}</p>
+    <IconComponent
+      v-if="props.icon && props.iconPosition === 'after'"
+      :color="props.colorIcon ?? '#fff'"
+      :name="props.icon"
+      :weight="props.iconWeight"
+      :size="props.iconSize ?? 20"
+    />
+  </button>
 </template>
