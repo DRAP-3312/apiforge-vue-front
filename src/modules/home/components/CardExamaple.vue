@@ -27,7 +27,7 @@ const emitSchema = (val: Object) => {
         @btn-emit="emitSchema(props.schema)"
       />
     </div>
-    <p class="dark:text-gray-400">{{ props.description }}</p>
+    <p class="dark:text-gray-400 text-gray-600">{{ props.description }}</p>
     <JsonTemplate
       :copy="props.copyContent"
       :json="props.schema"

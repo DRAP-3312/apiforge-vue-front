@@ -30,7 +30,12 @@ const buttonClasses = computed(() => {
 
   switch (props.buttonType) {
     case 'base':
-      classes.push('dark:bg-gray-800', 'bg-gray-700', 'hover:bg-gray-600', 'dark:hover:bg-gray-700')
+      classes.push(
+        'dark:bg-success-700',
+        'bg-success-900',
+        'hover:bg-success-700',
+        'dark:hover:bg-success-900',
+      )
       break
     case 'success':
       classes.push('bg-success-600', 'hover:bg-success-700')

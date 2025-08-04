@@ -23,7 +23,7 @@ onMounted(() => {
       <LoaderComponent
         type-loader="bar"
         :bg-loader="theme === 'light' ? '#fff' : '#111827'"
-        color-loader="#22c55e"
+        :color-loader="theme == 'light' ? '#046c56' : '#0fa087'"
         v-if="loading"
       />
     </header>
@@ -31,7 +31,7 @@ onMounted(() => {
     <main
       class="px-2 pt-16"
       :class="{
-        'brightness-75': loading,
+        'dark:brightness-50 brightness-90 blur-xs': loading,
       }"
     >
       <RouterView></RouterView>

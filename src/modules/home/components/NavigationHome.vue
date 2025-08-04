@@ -20,7 +20,9 @@ const listBtnThemes: { id: number; content: string; icon: any; theme: Theme }[] 
 <template>
   <div class="w-full h-full flex items-center justify-between dark:text-white text-gray-600 p-3">
     <div>
-      <h1 class="text-3xl">API Forge</h1>
+      <RouterLink :to="{ path: '/' }">
+        <h1 class="text-3xl dark:text-success-500 text-success-900 font-family-mono">API Forge</h1>
+      </RouterLink>
     </div>
     <div class="flex justify-cente items-center gap-2">
       <ButtonTheme

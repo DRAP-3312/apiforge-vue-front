@@ -9,9 +9,11 @@
   --color-primary-600: #2563eb;
   --color-primary-700: #1d4ed8;
 
-  --color-success-500: #22c55e;
-  --color-success-600: #16a34a;
-  --color-success-700: #15803d;
+  --color-success-500: #0fa087;
+  --color-success-600: #0b8f77;
+  --color-success-700: #087d66;
+  --color-success-800: #046c56;
+  --color-success-900: #005a45;
 
   --color-warning-500: #f59e0b;
   --color-warning-600: #d97706;
@@ -29,7 +31,7 @@
   --font-family-serif:
     'Playfair Display', ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
   --font-family-mono:
-    'JetBrains Mono', ui-monospace, SFMono-Regular, 'SF Mono', Consolas, 'Liberation Mono', Menlo, monospace;
-  --font-family-display:
-    'Poppins', ui-sans-serif, system-ui, sans-serif;
+    'JetBrains Mono', ui-monospace, SFMono-Regular, 'SF Mono', Consolas, 'Liberation Mono', Menlo,
+    monospace;
+  --font-family-display: 'Poppins', ui-sans-serif, system-ui, sans-serif;
 }

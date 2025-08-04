@@ -32,7 +32,7 @@ const copyToClipboard = async () => {
       :value="formattedJson"
       :disabled="!props.disable"
       :rows="textareaRows"
-      class="w-full resize-none rounded-xl p-6 mt-4 text-sm font-mono overflow-auto shadow-lg ring-1 transition-colors bg-gray-100 text-gray-800 ring-gray-200 dark:bg-slate-800 dark:text-slate-300 dark:ring-slate-800 focus:outline-none"
+      class="w-full resize-none rounded-xl font-family-mono p-6 mt-4 text-sm overflow-auto shadow-lg ring-1 transition-colors bg-gray-100 text-gray-800 ring-gray-200 dark:bg-slate-800 dark:text-slate-300 dark:ring-slate-800 focus:outline-none"
     ></textarea>
 
     <button
