@@ -14,10 +14,10 @@ const emitBtn = (val: Theme) => emit('btn-emit', val)
 <template>
   <div class="w-full h-full">
     <button
-      class="cursor-pointer px-2 py-1 rounded-md dark:text-white text-gray-600"
+      class="cursor-pointer px-2 py-1 rounded-md dark:text-white text-gray-600 w-full h-full"
       :class="{
         'bg-success-500 hover:bg-success-700 text-white': props.target === props.theme,
-        'dark:bg-gray-700 bg-gray-200 dark:hover:bg-gray-600 hover:bg-gray-400':
+        'dark:bg-gray-700 bg-gray-200 dark:hover:bg-gray-600 hover:bg-gray-500 hover:text-white':
           props.target !== props.theme,
       }"
       @click="emitBtn(props.theme)"
@@ -27,7 +27,7 @@ const emitBtn = (val: Theme) => emit('btn-emit', val)
           :name="props.icon"
           :size="20"
           weight="duotone"
-          :color="target === 'dark' || props.target === props.theme ? '#fff' : '#8A8A8A'"
+          :color="target === 'dark' || props.target === props.theme ? '#fff' : '#000'"
           v-if="props.icon"
         />
 

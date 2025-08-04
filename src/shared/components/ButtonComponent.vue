@@ -17,7 +17,6 @@ const buttonClasses = computed(() => {
     'rounded-md',
     'px-4',
     'py-2',
-    'text-white',
     'font-medium',
     'transition-colors',
     'duration-200',
@@ -31,14 +30,21 @@ const buttonClasses = computed(() => {
   switch (props.buttonType) {
     case 'base':
       classes.push(
-        'dark:bg-success-700',
+        'dark:bg-success-700 text-white',
         'bg-success-900',
         'hover:bg-success-700',
         'dark:hover:bg-success-900',
       )
       break
     case 'success':
-      classes.push('bg-success-600', 'hover:bg-success-700')
+      classes.push('bg-success-600 text-white', 'hover:bg-success-700')
+      break
+
+    case 'info':
+      classes.push(
+        'dark:bg-gray-800 bg-gray-200 text-gray-600 dark:text-white',
+        'dark:hover:bg-gray-700 hover:bg-gray-400',
+      )
       break
     default:
       break
